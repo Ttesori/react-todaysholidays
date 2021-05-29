@@ -22,7 +22,7 @@ function App() {
     e.preventDefault();
     const searchTerm = document.getElementById('text-search').value;
     if (searchTerm) {
-      console.log('Searching for', searchTerm);
+      document.getElementById('text-search').value = '';
       setSearchTerm(searchTerm);
       const results = await searchHolidays(searchTerm);
       setHolidays(results);
@@ -30,7 +30,6 @@ function App() {
   }
   const onChangeDate = (e) => {
     e.preventDefault();
-    console.log('Opening date picker!', e)
     // Show picker
     document.querySelector('.input-date').classList.toggle('hide');
     // Hide button
