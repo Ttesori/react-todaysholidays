@@ -112,6 +112,7 @@ input[type='date'] {
   width: 100%;
   max-width: 400px;
   align-self: center;
+  position: relative;
 }
 
 .tih-search label {
@@ -120,8 +121,8 @@ input[type='date'] {
 }
 
 #text-search {
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  background-color: rgba(255, 255, 255, 0.1);
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.2);
   color: var(--th-neutral-dk);
   border-radius: 100px;
   font-size: 0.9rem;
@@ -131,14 +132,13 @@ input[type='date'] {
 }
 
 #text-search::placeholder {
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.4);
   transition: all 0.2s;
 }
 
 #text-search:hover,
 #text-search:focus {
   background-color: rgba(255, 255, 255, 0.5);
-  border-color: rgba(255, 255, 255, 0.3);
 }
 
 #text-search:hover::placeholder {
@@ -150,10 +150,14 @@ input[type='date'] {
   padding: 0 0.25rem 0 1rem;
   border: 0;
   cursor: pointer;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.4);
   width: auto;
+  position: absolute;
+  right: 0.75rem;
+  top: 0.3rem;
 }
 
+#text-search:hover .btn-search,
 .btn-search:hover {
   color: #fff;
 }
@@ -183,8 +187,11 @@ input[type='date'] {
   border: 1px solid var(--th-primary);
   font-size: 0.9rem;
   cursor: pointer;
-  width: 37%;
   background: #fcfcfc;
+}
+
+.btn-change-date {
+  width: auto;
 }
 .btn-change-date:hover {
   background: var(--th-primary);
@@ -229,9 +236,11 @@ input[type='date'] {
   border-top: 2px solid rgba(0, 0, 0, 0.05);
 }
 
-ul.tih-holidays-list {
-  margin: 0;
+.tih-holidays-list {
+  margin: 0 auto;
   padding: 0;
+  width: 100%;
+  max-width: 350px;
 }
 
 .tih-holidays-list li {
@@ -282,7 +291,11 @@ ul.tih-holidays-list {
   min-width: 50px;
   text-align: center;
 }
-
+.tih-aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .tih-blurb:last-child {
   border-bottom: 0;
 }
@@ -291,6 +304,7 @@ ul.tih-holidays-list {
   margin: 2rem 0;
   padding-bottom: 2rem;
   border-bottom: 2px solid #eee;
+  max-width: 400px;
 }
 
 .form-submit-holiday {
