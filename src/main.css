@@ -189,7 +189,8 @@ a:hover {
   color: var(--th-neutral-dk);
   background: #fcfcfc;
   font-size: 0.9rem;
-  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   width: 100%;
   max-width: 300px;
 }
