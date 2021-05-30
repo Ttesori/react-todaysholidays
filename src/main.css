@@ -57,6 +57,7 @@ a:hover {
 input[type='date'] {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
+  min-height: 1.3rem;
 }
 
 .hide {
@@ -190,6 +191,7 @@ input[type='date'] {
 }
 
 .input-date {
+  border: 1px solid var(--th-primary);
   color: var(--th-neutral-dk);
   background: #fcfcfc;
   font-size: 0.9rem;
