@@ -14,15 +14,15 @@ export default function Aside() {
           <input type="hidden" name="form-name" value="form-submit-holiday" />
           <div className="form-fields">
             <label htmlFor="add-date" >Holiday Date</label>
-            <input type="date" id="add-date" placeholder="Enter holiday date" className="form-control" />
+            <input type="date" name="add-date" placeholder="Enter holiday date" className="form-control" />
           </div>
           <div className="form-fields">
             <label htmlFor="add-name">Holiday Name</label>
-            <input type="text" id="add-name" className="form-control" placeholder="Enter holiday name" />
+            <input type="text" name="add-name" className="form-control" placeholder="Enter holiday name" />
           </div>
           <div className="form-fields">
             <label htmlFor="add-info">Where can we find more info?</label>
-            <input type="text" className="form-control" id="add-info" placeholder="Link to more information" />
+            <input type="text" className="form-control" name="add-info" placeholder="Link to more information" />
           </div>
           <button className="btn btn-submit-holiday">Send Form</button>
         </form>
@@ -32,7 +32,7 @@ export default function Aside() {
         <form method="post" name="form-list" className="form-list form-fields">
           <input type="hidden" name="form-name" value="form-list" />
           <label htmlFor="list-email" className="label-email">Email</label>
-          <input type="email" id="list-email" placeholder="Enter email address..." />
+          <input type="email" name="list-email" placeholder="Enter email address..." />
           <button className="btn btn-submit-list">Join List</button>
         </form>
       </Blurb>
