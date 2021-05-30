@@ -6,16 +6,17 @@ import Aside from './components/Aside'
 import Footer from './components/Footer';
 import Button from './components/Button';
 import './main.css';
+const URL_BASE = 'https://todaysholidaysapi.com/holidays'
 
 function App() {
 
   const getHolidays = async (month, day) => {
-    const data = await fetch(`https://todaysholiday.herokuapp.com/holidays/${month}/${day}`);
+    const data = await fetch(`${URL_BASE}/${month}/${day}`);
     const results = await data.json();
     return results;
   };
   const searchHolidays = async (searchTerm) => {
-    const data = await fetch(`https://todaysholiday.herokuapp.com/holidays/search?s=${searchTerm}`);
+    const data = await fetch(`${URL_BASE}/search?s=${searchTerm}`);
     const results = await data.json();
     return results;
   };
