@@ -64,7 +64,8 @@ function App() {
     return {
       formattedDate: `${months[month]} ${day}, ${year}`,
       month: month + 1,
-      day
+      day,
+      yyyy: `${year}-${(month + 1).toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`
     }
   }
   const [holidays, setHolidays] = useState([]);
@@ -91,7 +92,7 @@ function App() {
               </Button>
           </div>
           : (
-            <DateInfo date={holidaysDate.formattedDate} onBtnChangeDate={onChangeDate} onInputChangeDate={onInputChangeDate} />)
+            <DateInfo date={holidaysDate.formattedDate} onBtnChangeDate={onChangeDate} onInputChangeDate={onInputChangeDate} yyyy={holidaysDate.yyyy} />)
       }
       <main className="tih-main">
         {
