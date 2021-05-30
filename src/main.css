@@ -89,6 +89,12 @@ input[type='date'] {
   text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.3);
 }
 
+.tih-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .tih-logo {
   text-align: center;
 }
@@ -103,6 +109,9 @@ input[type='date'] {
 .tih-search {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  max-width: 400px;
+  align-self: center;
 }
 
 .tih-search label {
@@ -119,7 +128,6 @@ input[type='date'] {
   flex-grow: 1;
   outline: 0;
   transition: all 0.2s;
-  max-width: 400px;
 }
 
 #text-search::placeholder {
