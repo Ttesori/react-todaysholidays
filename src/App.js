@@ -43,7 +43,7 @@ function App() {
     // Hide button
     document.querySelector('.btn-change-date').classList.toggle('hide');
     const dateInfo = getDateInfo(e.target.value);
-    inputDateEl.value = '';
+    inputDateEl.value = dateInfo.yyyy;
     setHolidaysDate(dateInfo);
     const data = await getHolidays(dateInfo.month, dateInfo.day);
     setHolidays(data);
