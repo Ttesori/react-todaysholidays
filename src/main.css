@@ -54,6 +54,10 @@ a:hover {
   color: #f64f59;
 }
 
+.hide {
+  display: none;
+}
+
 .btn {
   background: none;
   border-radius: 0.5rem;
@@ -186,8 +190,8 @@ a:hover {
   background: #fcfcfc;
   font-size: 0.9rem;
   position: relative;
-  width: 85%;
-  max-width: 250px;
+  width: 100%;
+  max-width: 300px;
 }
 .input-date:focus-visible {
   outline: none;
@@ -231,6 +235,16 @@ ul.tih-holidays-list {
   font-size: 1.1rem;
   left: 0;
   position: absolute;
+}
+
+.tih-holidays-list a:link {
+  text-decoration: none;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.tih-holidays-list .fas {
+  padding-left: 0.5rem;
 }
 
 .search-results li {

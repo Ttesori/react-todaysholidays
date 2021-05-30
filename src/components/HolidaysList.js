@@ -17,7 +17,15 @@ export default function HolidaysList({ holidays, searchTerm }) {
               <span className="search-date">{holiday.month}/{holiday.day.toString().padStart(2, '0')}</span>
               : ''
           }
-          <span>{holiday.name}</span>
+          <span>
+            {holiday.name}
+            <a href={`https://www.google.com/search?q=${encodeURIComponent(holiday.name)}`}
+              target="_blank"
+              rel="noreferrer"
+              title={`Learn more about ${holiday.name}`}
+            >
+              <i class="fas fa-external-link-alt"></i>
+            </a></span>
         </li>
       )) : (<span className="not-found">Holidays Not Found</span>)}
     </ul>
