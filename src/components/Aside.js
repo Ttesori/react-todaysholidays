@@ -29,7 +29,7 @@ export default function Aside() {
       </Blurb>
       <Blurb title="Connect with Us">
         <p>Want a digest of this week's holidays delivered directly to your inbox every Monday? Join the mailing list below &mdash; we send out the holidays and nothing else! </p>
-        <form method="post" className="form-list form-fields">
+        <form method="post" name="form-list" className="form-list form-fields">
           <input type="hidden" name="form-name" value="form-list" />
           <label htmlFor="list-email" className="label-email">Email</label>
           <input type="email" id="list-email" placeholder="Enter email address..." />
