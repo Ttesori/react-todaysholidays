@@ -54,6 +54,11 @@ a:hover {
   color: #f64f59;
 }
 
+input[type='date'] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+}
+
 .hide {
   display: none;
 }
@@ -185,12 +190,9 @@ a:hover {
 }
 
 .input-date {
-  border: 1px solid var(--th-primary);
   color: var(--th-neutral-dk);
   background: #fcfcfc;
   font-size: 0.9rem;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   width: 100%;
   max-width: 300px;
 }
