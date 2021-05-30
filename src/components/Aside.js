@@ -5,7 +5,7 @@ export default function Aside() {
     <section className="tih-aside">
       <Blurb title="About This Site">
         <p>
-          Today's Holidays uses <a href="https://todaysholidays.herokuapp.com">Today's Holidays API</a>, aggregated from several sources, including <a href="https://www.timeanddate.com/holidays/fun/">Time and Date</a> and <a href="https://www.holidayscalendar.com/categories/weird/">Holidays Calendar</a>.</p>
+          Today's Holidays uses <a href="https://todaysholidays.herokuapp.com">Today's Holidays API</a>, which aggregates data from several sources, including <a href="https://www.timeanddate.com/holidays/fun/" target="_blank" rel="noreferrer">Time and Date</a> and <a href="https://www.holidayscalendar.com/categories/weird/" target="_blank" rel="noreferrer">Holidays Calendar</a>.</p>
         <p>Notice we're missing a holiday? Fill out the Submit a Holiday form and we'll get it added!
         </p>
       </Blurb>
@@ -27,7 +27,7 @@ export default function Aside() {
           <button className="btn btn-submit-holiday">Send Form</button>
         </form>
       </Blurb>
-      <Blurb title="Connect with Us">
+      <Blurb title="Weekly Holidays &mdash; Delivered!">
         <p>Want a digest of this week's holidays delivered directly to your inbox every Monday? Join the mailing list below &mdash; we send out the holidays and nothing else! </p>
         <form method="post" name="form-list" className="form-list form-fields">
           <input type="hidden" name="form-name" value="form-list" />
