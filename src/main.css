@@ -119,6 +119,7 @@ input[type='date'] {
   flex-grow: 1;
   outline: 0;
   transition: all 0.2s;
+  max-width: 400px;
 }
 
 #text-search::placeholder {

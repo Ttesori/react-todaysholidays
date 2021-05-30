@@ -10,7 +10,7 @@ export default function Aside() {
         </p>
       </Blurb>
       <Blurb title="Submit a Holiday">
-        <form name="form-submit-holiday" className="form-submit-holiday">
+        <form name="form-submit-holiday" className="form-submit-holiday" method="post">
           <input type="hidden" name="form-name" value="form-submit-holiday" />
           <div className="form-fields">
             <label htmlFor="add-date" >Holiday Date</label>
