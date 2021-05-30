@@ -10,7 +10,7 @@ export default function DateInfo({ date, onBtnChangeDate, onInputChangeDate }) {
   return (
     <section className="date-info">
       <span className="date-text">{date}</span>
-      <input type="date" onChange={onInputChangeDate} onBlur={onDateInputBlur} className="btn input-date hide" aria-label="Choose a Date" />
+      <input type="date" onChange={onInputChangeDate} onBlur={onDateInputBlur} className="btn input-date hide" aria-label="Choose a Date" placeholder="Choose A Date" />
       <Button className='btn btn-change-date' onClick={onBtnChangeDate}>Change Date</Button>
     </section>
   )
