@@ -186,7 +186,8 @@ a:hover {
   background: #fcfcfc;
   font-size: 0.9rem;
   position: relative;
-  width: auto;
+  width: 85%;
+  max-width: 250px;
 }
 .input-date:focus-visible {
   outline: none;
