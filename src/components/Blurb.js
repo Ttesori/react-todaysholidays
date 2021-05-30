@@ -1,8 +1,8 @@
 export default function Blurb({ title, children }) {
   return (
-    <div>
+    <div className="tih-blurb">
       <h3>{title}</h3>
-      <p>{children}</p>
+      <div>{children}</div>
     </div>
   )
 }

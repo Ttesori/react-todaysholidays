@@ -5,6 +5,7 @@ import HolidaysList from './components/HolidaysList';
 import Aside from './components/Aside'
 import Footer from './components/Footer';
 import Button from './components/Button';
+import './main.css';
 
 function App() {
 
@@ -37,10 +38,12 @@ function App() {
   }
   const onInputChangeDate = async (e) => {
     // Update shown holidays
-    document.querySelector('.input-date').classList.toggle('hide');
+    const inputDateEl = document.querySelector('.input-date');
+    inputDateEl.classList.toggle('hide');
     // Hide button
     document.querySelector('.btn-change-date').classList.toggle('hide');
     const dateInfo = getDateInfo(e.target.value);
+    inputDateEl.value = '';
     setHolidaysDate(dateInfo);
     const data = await getHolidays(dateInfo.month, dateInfo.day);
     setHolidays(data);
@@ -50,6 +53,7 @@ function App() {
     const dateDeets = getDateInfo();
     const data = await getHolidays(dateDeets.month, dateDeets.day);
     setHolidays(data);
+    document.querySelector('.tih-holidays-list').classList.toggle('search-results');
   }
   const getDateInfo = (strDate = new Date()) => {
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -78,10 +82,27 @@ function App() {
   return (
     <>
       <Header onClickSearch={onClickSearch} />
-      {searchTerm ? (<Button text="Back to Today's Holidays" className="btn-back" onClick={onBackBtn} />) : (
-        <DateInfo date={holidaysDate.formattedDate} onBtnChangeDate={onChangeDate} onInputChangeDate={onInputChangeDate} />)}
-      <h1>{searchTerm ? `Results for ${searchTerm}` : 'Celebrate! Today IS a holiday!'}</h1>
-      <HolidaysList holidays={holidays} searchTerm={searchTerm} />
+      {
+        searchTerm ?
+          <div className="date-info">
+            <Button className="btn-back" onClick={onBackBtn}>
+              <i class="fas fa-long-arrow-alt-left"></i>
+              Back to Today's Holidays
+              </Button>
+          </div>
+          : (
+            <DateInfo date={holidaysDate.formattedDate} onBtnChangeDate={onChangeDate} onInputChangeDate={onInputChangeDate} />)
+      }
+      <main className="tih-main">
+        {
+          searchTerm ?
+            <h1>Results for '{searchTerm}'</h1> :
+            <h1>Celebrate 🎉 <br />
+              <span>Today IS a holiday!</span>
+            </h1>
+        }
+        <HolidaysList holidays={holidays} searchTerm={searchTerm} />
+      </main>
       <Aside />
       <Footer />
     </>
