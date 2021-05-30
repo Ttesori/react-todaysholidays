@@ -15,7 +15,7 @@
   <link rel="icon" href="/img/favicon.png">
 
 
-  <title>Today IS a Holiday! What Funny, Offbeat Holidays are Today?</title>
+  <title>Today IS a Holiday! What Funny, Weird Holidays are Today?</title>
 </head>
 
 <body>
@@ -23,14 +23,12 @@
   <div id="root"></div>
   <!-- help for netlify forms -->
   <form name="form-submit-holiday" netlify netlify-honeypot="bot-field" hidden>
-    <div className="form-fields">
-      <input type="date" name="add-date" placeholder="Enter holiday date" className="form-control" />
-      <input type="text" name="add-name" className="form-control" placeholder="Enter holiday name" />
-      <input type="text" name="add-info" />
-    </div>
+    <input type="date" name="add-date" />
+    <input type="text" name="add-name" />
+    <input type="text" name="add-info" />
   </form>
   <form name="form-list" netlify netlify-honeypot="bot-field" hidden>
-    <input type="email" id="list-email" />
+    <input type="email" name="list-email" />
   </form>
 </body>
 
