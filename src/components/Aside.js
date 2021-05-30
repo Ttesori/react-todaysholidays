@@ -10,7 +10,8 @@ export default function Aside() {
         </p>
       </Blurb>
       <Blurb title="Submit a Holiday">
-        <form netlify="true" className="form-submit-holiday">
+        <form name="form-submit-holiday" className="form-submit-holiday">
+          <input type="hidden" name="form-name" value="form-submit-holiday" />
           <div className="form-fields">
             <label htmlFor="add-date" >Holiday Date</label>
             <input type="date" id="add-date" placeholder="Enter holiday date" className="form-control" />

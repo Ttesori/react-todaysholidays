@@ -21,6 +21,14 @@
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
+  <!-- help for netlify forms -->
+  <form name="form-submit-holiday" netlify netlify-honeypot="bot-field" hidden>
+    <div className="form-fields">
+      <input type="date" name="add-date" placeholder="Enter holiday date" className="form-control" />
+      <input type="text" name="add-name" className="form-control" placeholder="Enter holiday name" />
+      <input type="text" name="add-info" />
+    </div>
+  </form>
 </body>
 
 </html>
