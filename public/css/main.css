@@ -149,6 +149,7 @@ input[type='date'] {
 #text-search:hover,
 #text-search:focus {
   background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
 }
 
 #text-search:hover::placeholder {
@@ -467,6 +468,10 @@ input[type='date'] {
     transform: translateY(-3px);
     font-size: 0.7rem;
     text-transform: uppercase;
+    transition: all 0.5s;
+  }
+
+  .btn-change-date:hover {
   }
 
   .input-date {
@@ -564,20 +569,6 @@ input[type='date'] {
   .tih-header::before {
     display: none;
   }
-  /* 
-  .tih-holidays-list::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 450px;
-    background-image: url('../img/bkg-mid.svg');
-    z-index: -1;
-    background-size: 100%;
-    background-position: bottom center;
-    background-repeat: no-repeat;
-  } */
 
   .main-container::after {
     content: '';
@@ -601,7 +592,8 @@ input[type='date'] {
   }
   .tih-header {
     padding: 1rem 2rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
     width: 100%;
     display: block;
   }
@@ -611,6 +603,9 @@ input[type='date'] {
     justify-content: space-between;
     align-items: center;
   }
+  .tih-logo {
+    filter: none;
+  }
 
   .date-info {
     margin: 0;
@@ -618,7 +613,7 @@ input[type='date'] {
     justify-content: flex-start;
     max-width: 100%;
     width: 100%;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
   }
 
   .date-text {
@@ -632,7 +627,15 @@ input[type='date'] {
   }
   .tih-search {
     margin-left: 2rem;
-    max-width: 300px;
+    max-width: 350px;
+    margin-right: 1rem;
+    margin-top: 0.25rem;
+  }
+  #text-search {
+    padding: 0.5rem 1rem;
+  }
+  .btn-search {
+    top: 0.5rem;
   }
   .tih-main {
     padding: 0;
@@ -645,8 +648,10 @@ input[type='date'] {
   .tih-main h1 {
     text-align: left;
     line-height: 1.1;
-    margin-top: 0.5rem;
+    margin-top: 0rem;
+    padding-top: 0.25rem;
     text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.2);
+    width: 450px;
   }
   .tih-main h1 br {
     display: inline-block;
@@ -659,11 +664,12 @@ input[type='date'] {
   }
   .tih-holidays-list li {
     width: 100%;
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.2);
   }
 
   .tih-holidays-list li::before,
   .tih-holidays-list a {
-    text-shadow: none;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05);
   }
   .tih-main::after {
     content: '';
@@ -710,14 +716,30 @@ input[type='date'] {
     padding-right: 0;
   }
 
+  .form-submit-holiday input,
+  .form-list input {
+    padding: 0.3rem 0.45rem;
+    font-size: 0.8rem;
+    border-color: rgba(18, 194, 233, 0.5);
+    background: rgba(255, 255, 255, 0.6);
+  }
+
+  .btn-submit-holiday {
+    padding: 0.25rem 0.75rem 0.35rem;
+    width: auto;
+    align-self: flex-end;
+  }
+
   .tih-footer {
     background: #403b44;
     position: relative;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.4);
     padding: 0;
     text-shadow: none;
     font-size: 0.9rem;
-    padding-top: 0.5rem;
+    background: #403b44 url('../img/icon-lg.svg') no-repeat center 1.25rem;
+    background-size: 50px 50px;
+    padding: 3.75rem 0 0.5rem;
   }
   .tih-footer::before {
     content: '';
@@ -730,6 +752,46 @@ input[type='date'] {
     border-top: 2px solid #ffc107;
   }
   .tih-footer a {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.4);
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+  }
+  .tih-footer a:hover {
+    color: #fff;
+    border-bottom-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .tih-footer img {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .main-container::after {
+    background-image: url('../img/bkg-lg.svg');
+    height: 500px;
+  }
+
+  .tih-aside .container::before {
+    top: -100px;
+    height: 100px;
+  }
+
+  .tih-aside {
+    margin-top: 5rem;
+  }
+
+  .tih-aside .container {
+    max-width: 1090px;
+    padding-top: 0;
+    flex-wrap: nowrap;
+  }
+  .tih-blurb {
+    padding-right: 0;
+    margin-right: 2rem;
+    width: 32%;
+  }
+  .tih-blurb:last-child {
+    padding-right: 0;
+    margin-right: 0;
   }
 }
