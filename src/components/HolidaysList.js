@@ -24,7 +24,7 @@ export default function HolidaysList({ holidays, searchTerm }) {
               rel="noreferrer"
               title={`Learn more about ${holiday.name}`}
             >
-              <i class="fas fa-external-link-alt"></i>
+              <i className="fas fa-external-link-alt"></i>
             </a></span>
         </li>
       )) : (<span className="not-found">Holidays Not Found</span>)}

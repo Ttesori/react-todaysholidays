@@ -6,12 +6,16 @@ export default function DateInfo({ date, onBtnChangeDate, onInputChangeDate, yyy
     const dateBtnEl = document.querySelector('.btn-change-date');
     dateInputEl.classList.toggle('hide');
     dateBtnEl.classList.toggle('hide');
+    document.querySelector('.date-text').classList.remove('hide-sm');
   }
   return (
-    <section className="date-info">
-      <span className="date-text">{date}</span>
-      <input type="date" onChange={onInputChangeDate} onBlur={onDateInputBlur} className="btn input-date hide" aria-label="Choose a Date" value={yyyy} />
-      <Button className='btn btn-change-date' onClick={onBtnChangeDate}>Change Date</Button>
-    </section>
+    <div className="container">
+      <section className="date-info">
+        <span className="date-text">{date}</span>
+        <input type="date" onChange={onInputChangeDate} onBlur={onDateInputBlur} className="btn input-date hide" aria-label="Choose a Date" value={yyyy} />
+        <Button className='btn btn-change-date' onClick={onBtnChangeDate}>Change Date</Button>
+      </section>
+    </div>
+
   )
 }

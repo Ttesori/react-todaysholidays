@@ -5,7 +5,6 @@ import HolidaysList from './components/HolidaysList';
 import Aside from './components/Aside'
 import Footer from './components/Footer';
 import Button from './components/Button';
-import './main.css';
 const URL_BASE = 'https://todaysholidaysapi.com/holidays'
 
 function App() {
@@ -33,16 +32,18 @@ function App() {
   const onChangeDate = (e) => {
     e.preventDefault();
     // Show picker
-    document.querySelector('.input-date').classList.toggle('hide');
-    // Hide button
-    document.querySelector('.btn-change-date').classList.toggle('hide');
+    document.querySelector('.input-date').classList.remove('hide');
+    // Hide button and date
+    document.querySelector('.btn-change-date').classList.add('hide');
+    document.querySelector('.date-text').classList.add('hide-sm');
   }
   const onInputChangeDate = async (e) => {
     // Update shown holidays
     const inputDateEl = document.querySelector('.input-date');
-    inputDateEl.classList.toggle('hide');
+    inputDateEl.classList.add('hide');
     // Hide button
-    document.querySelector('.btn-change-date').classList.toggle('hide');
+    document.querySelector('.btn-change-date').classList.remove('hide');
+    document.querySelector('.date-text').classList.remove('hide-sm');
     const dateInfo = getDateInfo(e.target.value);
     inputDateEl.value = dateInfo.yyyy;
     setHolidaysDate(dateInfo);
@@ -95,16 +96,19 @@ function App() {
           : (
             <DateInfo date={holidaysDate.formattedDate} onBtnChangeDate={onChangeDate} onInputChangeDate={onInputChangeDate} yyyy={holidaysDate.yyyy} />)
       }
-      <main className="tih-main">
-        {
-          searchTerm ?
-            <h1>Results for '{searchTerm}'</h1> :
-            <h1>Celebrate 🎉 <br />
-              <span>Today IS a holiday!</span>
-            </h1>
-        }
-        <HolidaysList holidays={holidays} searchTerm={searchTerm} />
-      </main>
+      <div className="container main-container">
+        <main className="tih-main">
+          {
+            searchTerm ?
+              <h1>Results for '{searchTerm}'</h1> :
+              <h1>Celebrate 🎉 <br />
+                <span>Every day is a holiday!</span>
+              </h1>
+          }
+          <HolidaysList holidays={holidays} searchTerm={searchTerm} />
+        </main>
+      </div>
+
       <Aside />
       <Footer />
     </>
