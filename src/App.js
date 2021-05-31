@@ -87,11 +87,13 @@ function App() {
       <Header onClickSearch={onClickSearch} />
       {
         searchTerm ?
-          <div className="date-info">
-            <Button className="btn-back" onClick={onBackBtn}>
-              <i class="fas fa-long-arrow-alt-left"></i>
+          <div className="container">
+            <div className="date-info">
+              <Button className="btn-back" onClick={onBackBtn}>
+                <i className="fas fa-long-arrow-alt-left"></i>
               Back to Today's Holidays
               </Button>
+            </div>
           </div>
           : (
             <DateInfo date={holidaysDate.formattedDate} onBtnChangeDate={onChangeDate} onInputChangeDate={onInputChangeDate} yyyy={holidaysDate.yyyy} />)

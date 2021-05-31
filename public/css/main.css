@@ -90,7 +90,7 @@ input[type='date'] {
   text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.3);
 }
 
-.tih-header {
+.tih-header .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -118,10 +118,9 @@ input[type='date'] {
 }
 .tih-search {
   display: flex;
-  justify-content: space-between;
+  align-self: center;
   width: 100%;
   max-width: 400px;
-  align-self: center;
   position: relative;
 }
 
@@ -161,16 +160,16 @@ input[type='date'] {
   padding: 0 0.25rem 0 1rem;
   border: 0;
   cursor: pointer;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.3);
   width: auto;
   position: absolute;
   right: 0.75rem;
   top: 0.3rem;
 }
 
-#text-search:hover .btn-search,
+.tih-search:hover .btn-search,
 .btn-search:hover {
-  color: #fff;
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .date-info {
@@ -637,6 +636,12 @@ input[type='date'] {
   .btn-search {
     top: 0.5rem;
   }
+  .btn-back {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: #403b44;
+    margin-bottom: 0.5rem;
+  }
   .tih-main {
     padding: 0;
     position: relative;
@@ -659,7 +664,7 @@ input[type='date'] {
 
   .tih-holidays-list {
     width: 450px;
-    max-height: 175px;
+    max-height: 200px;
     overflow: auto;
   }
   .tih-holidays-list li {
@@ -694,6 +699,18 @@ input[type='date'] {
   }
   .tih-holidays-list li a:hover {
     color: #fff;
+  }
+
+  .search-results li {
+    font-size: 0.9rem;
+  }
+
+  .search-results .search-date {
+    padding: 0.1rem 0.2rem 0.17rem;
+    min-width: 43px;
+    font-size: 0.7rem;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 193, 7, 0.9);
   }
 
   .tih-aside {
@@ -737,9 +754,9 @@ input[type='date'] {
     padding: 0;
     text-shadow: none;
     font-size: 0.9rem;
-    background: #403b44 url('../img/icon-lg.svg') no-repeat center 1.25rem;
+    background: #403b44 url('../img/icon-lg.svg') no-repeat center 1.5rem;
     background-size: 50px 50px;
-    padding: 3.75rem 0 0.5rem;
+    padding: 4rem 0 0.5rem;
   }
   .tih-footer::before {
     content: '';
