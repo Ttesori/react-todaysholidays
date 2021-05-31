@@ -664,7 +664,7 @@ input[type='date'] {
 
   .tih-holidays-list {
     width: 450px;
-    max-height: 200px;
+    height: 200px;
     overflow: auto;
   }
   .tih-holidays-list li {
