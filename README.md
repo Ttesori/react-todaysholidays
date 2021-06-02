@@ -1,70 +1,19 @@
-# Getting Started with Create React App
+<img src="https://todaysholiday.herokuapp.com/img/th-logo.png" alt="Today's Holidays Logo" width="85%">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Today's Holidays
 
-## Available Scripts
+This project is the front end companion to the [Today's Holidays API](https://github.com/Ttesori/api-todaysholiday) to serve up offbeat/funny holidays for a particular month or day.
 
-In the project directory, you can run:
+**Link to project:** https://todaysholiday.netlify.app/
 
-### `npm start`
+## How It's Made:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Tech used:** React, JSX, HTML, CSS
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The application was created to reacquaint myself with the fundamentals of React, especially with the recent introduction of hooks. It is also designed using a mobile-first methodology, which is the first time I utilized that during a project. In addition, it heavily utilizes SVG graphics, which create big impact with small file sizes.
 
-### `npm test`
+## Lessons Learned:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Mobile-first designing is way easier than trying to shoehorn it in after creating a desktop version.
+- I love the organization and speed of React. It greatly appeals to my information architecture/librarian side!
+- Be cognizant of background images when creating designs. The wave combined with the angled gradient made implementing this background a bit challenging in practice -- something to keep in mind for the future.
