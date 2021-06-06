@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 export default function HolidaysList({ holidays, searchTerm }) {
   const updateSearchTerm = (term) => {
-    if (term) document.querySelector('.tih-holidays-list').classList.toggle('search-results');
     setShowDate(term);
   };
   useEffect(() => {
@@ -9,7 +8,7 @@ export default function HolidaysList({ holidays, searchTerm }) {
   }, [searchTerm]);
   const [showDate, setShowDate] = useState('');
   return (
-    <ul className="tih-holidays-list">
+    <ul className={searchTerm ? 'tih-holidays-list search-results' : 'tih-holidays-list'}>
       {holidays.length > 0 ? holidays.map(holiday => (
         <li key={holiday._id}>
           {

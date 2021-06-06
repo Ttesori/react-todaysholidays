@@ -237,6 +237,7 @@ input[type='date'] {
   text-align: center;
 }
 .tih-main h1 span {
+  display: block;
   font-size: 1.7rem;
 }
 .tih-aside {
@@ -480,9 +481,6 @@ input[type='date'] {
 
   .tih-main {
     padding-top: 3rem;
-  }
-
-  .tih-main h1 br {
   }
 
   .tih-holidays-list {
