@@ -4,11 +4,11 @@ import DateInfo from './components/DateInfo';
 import HolidaysList from './components/HolidaysList';
 import Aside from './components/Aside'
 import Footer from './components/Footer';
-import Button from './components/Button';
+import PageHeader from './components/PageHeader';
+import SearchHeader from './components/SearchHeader';
 const URL_BASE = 'https://todaysholidaysapi.com/holidays'
 
 function App() {
-
   const getHolidays = async (month, day) => {
     const data = await fetch(`${URL_BASE}/${month}/${day}`);
     const results = await data.json();
@@ -19,33 +19,20 @@ function App() {
     const results = await data.json();
     return results;
   };
-  const onClickSearch = async (e) => {
+  const onClickSearch = async (e, txtSearch) => {
     e.preventDefault();
-    const searchTerm = document.getElementById('text-search').value;
+    const searchTerm = txtSearch.current.value;
     if (searchTerm) {
-      document.getElementById('text-search').value = '';
+      txtSearch.current.value = '';
       setSearchTerm(searchTerm);
       const results = await searchHolidays(searchTerm);
       setHolidays(results);
     }
   }
-  const onChangeDate = (e) => {
-    e.preventDefault();
-    // Show picker
-    document.querySelector('.input-date').classList.remove('hide');
-    // Hide button and date
-    document.querySelector('.btn-change-date').classList.add('hide');
-    document.querySelector('.date-text').classList.add('hide-sm');
-  }
-  const onInputChangeDate = async (e) => {
-    // Update shown holidays
-    const inputDateEl = document.querySelector('.input-date');
-    inputDateEl.classList.add('hide');
-    // Hide button
-    document.querySelector('.btn-change-date').classList.remove('hide');
-    document.querySelector('.date-text').classList.remove('hide-sm');
+
+  const onInputChangeDate = async (e, inputDateEl) => {
     const dateInfo = getDateInfo(e.target.value);
-    inputDateEl.value = dateInfo.yyyy;
+    inputDateEl.current.value = dateInfo.yyyy;
     setHolidaysDate(dateInfo);
     const data = await getHolidays(dateInfo.month, dateInfo.day);
     setHolidays(data);
@@ -55,7 +42,6 @@ function App() {
     const dateDeets = getDateInfo();
     const data = await getHolidays(dateDeets.month, dateDeets.day);
     setHolidays(data);
-    document.querySelector('.tih-holidays-list').classList.toggle('search-results');
   }
   const getDateInfo = (strDate = new Date()) => {
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -70,9 +56,11 @@ function App() {
       yyyy: `${year}-${(month + 1).toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`
     }
   }
+
   const [holidays, setHolidays] = useState([]);
   const [holidaysDate, setHolidaysDate] = useState(getDateInfo(new Date()));
   const [searchTerm, setSearchTerm] = useState('');
+
   useEffect(() => {
     const fetchHolidays = async (month, day) => {
       const data = await getHolidays(month, day);
@@ -85,32 +73,15 @@ function App() {
   return (
     <>
       <Header onClickSearch={onClickSearch} />
-      {
-        searchTerm ?
-          <div className="container">
-            <div className="date-info">
-              <Button className="btn-back" onClick={onBackBtn}>
-                <i className="fas fa-long-arrow-alt-left"></i>
-              Back to Today's Holidays
-              </Button>
-            </div>
-          </div>
-          : (
-            <DateInfo date={holidaysDate.formattedDate} onBtnChangeDate={onChangeDate} onInputChangeDate={onInputChangeDate} yyyy={holidaysDate.yyyy} />)
-      }
+      { searchTerm ?
+        <SearchHeader onBackBtn={onBackBtn} /> :
+        <DateInfo date={holidaysDate.formattedDate} onInputChangeDate={onInputChangeDate} yyyy={holidaysDate.yyyy} />}
       <div className="container main-container">
         <main className="tih-main">
-          {
-            searchTerm ?
-              <h1>Results for '{searchTerm}'</h1> :
-              <h1>Celebrate 🎉 <br />
-                <span>Every day is a holiday!</span>
-              </h1>
-          }
+          <PageHeader searchTerm={searchTerm} />
           <HolidaysList holidays={holidays} searchTerm={searchTerm} />
         </main>
       </div>
-
       <Aside />
       <Footer />
     </>
